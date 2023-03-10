@@ -1,6 +1,40 @@
+//project3_Pig Game
+
 'use strict';
 
-//project3_Pig Game
+//modal window
+
+const modal = document.querySelector(`.modal`);
+const overlay = document.querySelector(`.overlay`);
+const btnclosemodal = document.querySelector(`.close-modal`);
+const btnshowmodal = document.querySelectorAll(`.show-modal`);
+console.log(btnshowmodal);
+
+const openModal = function () {
+  console.log(`Button clicked`);
+  //class list property and its sub-types
+  modal.classList.remove(`hidden`); //we dont use dot here
+  overlay.classList.remove(`hidden`);
+  // modal.style.display = 'block';
+};
+
+for (let i = 0; i < btnshowmodal.length; ++i) {
+  btnshowmodal[i].addEventListener(`click`, openModal);
+}
+function closeModal() {
+  modal.classList.add(`hidden`);
+  overlay.classList.add(`hidden`);
+}
+// console.log(btnclosemodal);
+btnclosemodal.addEventListener(`click`, closeModal);
+overlay.addEventListener(`click`, closeModal);
+
+document.addEventListener(`keydown`, function (e) {
+  console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 
 // Selecting elements
 const score0El = document.querySelector(`#score--0`);
@@ -54,7 +88,7 @@ btnRoll.addEventListener(`click`, function () {
 
     // 2. display dice
     diceEl.classList.remove(`hidden`);
-    diceEl.src = `dice-${dice}.png`;
+    diceEl.src = `./Assets/dice-${dice}.png`;
 
     // 3. check for rolled 1
     if (dice !== 1) {

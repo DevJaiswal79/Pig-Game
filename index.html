@@ -9,6 +9,21 @@
   </head>
   <body>
     <main>
+    <button class="btn show-modal">📜 Rules</button>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1> Rule's for Pig game </h1>
+      <br>
+        1. Players take turns with a die. <br>
+        2. On a player’s turn he/she can roll a die as many times as they like. <br>
+        3. If a roll is a 2, 3, 4, 5, or 6, the player adds that many points to their score for the turn. <br>
+        4. A player may choose to end their turn at any time and “bank” their points. <br> 
+        5. If a player rolls a 1, they lose all their unbanked points and their turn is over. <br> <br>
+
+        • The first player to score 100 or more points wins 🎉. <br>
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
@@ -26,7 +41,7 @@
         </div>
       </section>
 
-      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <img src="./Assets/dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
